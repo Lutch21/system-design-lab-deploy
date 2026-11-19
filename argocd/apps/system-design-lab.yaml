@@ -1,0 +1,29 @@
+# System Design Lab in the local kind cluster.
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: system-design-lab
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Lutch21/system-design-lab-deploy.git
+    targetRevision: main
+    path: apps/system-design-lab/overlays/local
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: system-design-lab
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+    # On a brand-new cluster this app can sync before ESO has installed its CRDs
+    # (SecretStore, ExternalSecret). Retrying lets it succeed once they exist.
+    retry:
+      limit: 10
+      backoff:
+        duration: 10s
+        factor: 2
+        maxDuration: 3m

@@ -1,0 +1,7 @@
+# What every environment has in common. Overlays add environment details on top.
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - web.yaml
+  - tutor.yaml
+  - secrets.yaml
