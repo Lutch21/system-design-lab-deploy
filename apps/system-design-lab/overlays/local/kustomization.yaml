@@ -10,6 +10,6 @@ resources:
 # Changing a tag here (or reverting CI's commit) is how you deploy or roll back.
 images:
   - name: ghcr.io/lutch21/system-design-lab-web
-    newTag: not-built-yet
+    newTag: 44c3a17737814f00cdd62b993d07effc612c05d8
   - name: ghcr.io/lutch21/system-design-lab-tutor
-    newTag: not-built-yet
+    newTag: 44c3a17737814f00cdd62b993d07effc612c05d8
