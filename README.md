@@ -4,6 +4,9 @@ The **CD** half of [System Design Lab](https://github.com/Lutch21/system-design-
 holds no application code, only what should be running in the cluster. Argo CD watches it and
 makes the cluster match.
 
+> **Support engineers:** start with [README_DEPLOYMENT.md](README_DEPLOYMENT.md). It's a full
+> walkthrough of the Argo CD apps, image tags, the Vault secret flow, runbooks and troubleshooting.
+
 | Repo | Job | Who changes it |
 |---|---|---|
 | [system-design-lab](https://github.com/Lutch21/system-design-lab) | **CI**: code, tests, Dockerfiles. Builds and pushes images. | Developers |
