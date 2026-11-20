@@ -293,7 +293,8 @@ flowchart LR
 
 **Which version is running right now?**
 ```bash
-kubectl -n system-design-lab get deploy -o custom-columns=NAME:.metadata.name,IMAGE:.spec.template.spec.containers[0].image
+# (keep the quotes: zsh, the default macOS shell, would otherwise treat [0] as a file pattern)
+kubectl -n system-design-lab get deploy -o 'custom-columns=NAME:.metadata.name,IMAGE:.spec.template.spec.containers[0].image'
 ```
 Then look the SHA up at `https://github.com/Lutch21/system-design-lab/commit/<sha>`.
 
