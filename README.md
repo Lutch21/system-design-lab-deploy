@@ -127,6 +127,18 @@ reconnects it to the kind network.
 | See what's running | `kubectl -n argocd get applications`, or the Argo CD UI (`kubectl -n argocd port-forward svc/argocd-server 8443:443`) |
 | Rotate the API key | `npm run vault:put-key` in the app repo, then the two commands above. |
 
+### Argo CD UI login
+
+```bash
+# Username: admin
+# Password (generated when Argo CD was installed):
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
+
+# Open the UI (the browser warns about the self-signed certificate; click through)
+kubectl -n argocd port-forward svc/argocd-server 8443:443
+# → https://localhost:8443
+```
+
 ## Troubleshooting
 
 | Symptom | Check |
