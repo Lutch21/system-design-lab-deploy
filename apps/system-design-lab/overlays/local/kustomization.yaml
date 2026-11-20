@@ -5,11 +5,10 @@ namespace: system-design-lab
 resources:
   - ../../base
   - secret-store.yaml
-
 # CI in the system-design-lab repo rewrites these tags after every successful build on main.
 # Changing a tag here (or reverting CI's commit) is how you deploy or roll back.
 images:
   - name: ghcr.io/lutch21/system-design-lab-web
-    newTag: 44c3a17737814f00cdd62b993d07effc612c05d8
+    newTag: 73450f9708fea44a4bbb0ede6bc32ed10b01a6ef
   - name: ghcr.io/lutch21/system-design-lab-tutor
-    newTag: 44c3a17737814f00cdd62b993d07effc612c05d8
+    newTag: 73450f9708fea44a4bbb0ede6bc32ed10b01a6ef
